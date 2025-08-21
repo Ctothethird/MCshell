@@ -15,15 +15,18 @@
 #define true !false
 void MC_loop(void);
 char *MC_read_line(void);
+
+
 typedef struct{
     char WORD[20];
 } WORD;
 WORD Mind[20];
 unsigned int MEMORY = 0b000000000;
-struct shortmem{
+struct {
     char blanks;//this is actually a number.
-    _Bool; //DO NOT ASSIGHN TRUE OR FALSE TO THIS EVER this val
-};
+    _Bool bitarray; //DO NOT ASSIGHN TRUE OR FALSE TO THIS EVER this val
+} shortmem;
+
 int main(int argc, const char **argv)
 {
   // Load config files, if any.
@@ -53,6 +56,7 @@ void MC_loop(void){
 
 int MC_think(char **args){
     if (args[0] == NULL){
+        shortmem.blanks++;
         goto emptyR;
         return 0;
     }
@@ -65,7 +69,23 @@ int MC_think(char **args){
     while (0){
     emptyR:
         printf("this string is empty user");
-        
+        if (shortmem.blanks > 8){
+            printf("communication deemed frivolus");
+        }
+    }
+    while (0){
+    otherres:
+        printf("this string is empty user");
+        if (shortmem.blanks > 8){
+            printf("communication deemed frivolus");
+        }
+    }
+    while (0){
+    executeR:
+        printf("this string is empty user");
+        if (shortmem.blanks > 8){
+            printf("communication deemed frivolus");
+        }
     }
     return 0;
 }
