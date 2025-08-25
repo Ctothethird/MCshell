@@ -62,6 +62,7 @@ int MC_think(char **args){
     }
     int foramount = 30;
     for (int tokes = 0; tokes < foramount;tokes++){
+      readloop:
         
     }
     
@@ -76,16 +77,18 @@ int MC_think(char **args){
     while (0){
     otherres:
         printf("this string is empty user");
+        shortmem.blanks++;
         if (shortmem.blanks > 8){
             printf("communication deemed frivolus");
         }
+                tokes++;
+        goto readloop;
     }
     while (0){
     executeR:
-        printf("this string is empty user");
-        if (shortmem.blanks > 8){
-            printf("communication deemed frivolus");
-        }
+        
+        tokes++;
+        goto readloop;
     }
     return 0;
 }
