@@ -17,9 +17,7 @@ void MC_loop(void);
 char *MC_read_line(void);
 
 
-typedef struct{
-    char WORD[20];
-} WORD;
+
 WORD Mind[20];
 unsigned int MEMORY = 0b000000000;
 struct {
